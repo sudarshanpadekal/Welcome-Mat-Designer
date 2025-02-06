@@ -13,6 +13,8 @@ print(" ")
 
 while S.isdigit()==False or 3*int(S)>terminal_width or int(S)%2==0:
     print("TRY AGAIN! DESIGN NOT POSSIBLE!".center(terminal_width))
+    print(" ")
+    print(" ")
     S=input("Enter the width of the mat you want to design: ")
     print(" ")
     print(" ")
