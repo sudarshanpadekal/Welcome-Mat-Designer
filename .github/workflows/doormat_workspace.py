@@ -3,6 +3,9 @@ import time
 import math
 import shutil
 
+max_runtime = 60
+start_time = time.time()
+
 terminal_width = shutil.get_terminal_size().columns
 disp=int(math.floor(((terminal_width-22)/2)))
 
@@ -34,3 +37,5 @@ while 1==1:
     print(" ")
     print(" ")
     time.sleep(3)
+    if time.time() - start_time > max_runtime:
+        break
