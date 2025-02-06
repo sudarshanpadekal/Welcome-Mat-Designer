@@ -1,7 +1,9 @@
-import os
-terminal_width = os.get_terminal_size().columns
+import math
+import shutil
+terminal_width = shutil.get_terminal_size().columns
+disp=int(math.floor(((terminal_width-22)/2)))
 
-print("Welcome Mat Designer".center(terminal_width))
+print(("-"*disp+" Welcome Mat Designer "+"-"*disp).center(terminal_width))
 print("#It must be a odd number only.".rjust(terminal_width))
 S=input("Enter the width of the mat you want to design: ")
 
