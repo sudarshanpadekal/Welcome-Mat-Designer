@@ -1,14 +1,17 @@
-import shutil
-terminal_width = shutil.get_terminal_size().columns
+import os
+terminal_width = os.get_terminal_size().columns
 
-print("Square Welcome Mat Designer".center(terminal_width))
+print("Welcome Mat Designer".center(terminal_width))
 print("#It must be a odd number only.".rjust(terminal_width))
-N=int(input("Enter the dimension of the mat you want to design: "))
-M=3*N
-while M>terminal_width or N%2==0:
+S=input("Enter the width of the mat you want to design: ")
+
+while S.isdigit()==False or 3*int(S)>terminal_width or int(S)%2==0:
     print("TRY AGAIN! DESIGN NOT POSSIBLE!".center(terminal_width))
-    N=int(input("Enter the dimension of the mat you want to design: "))
-    M=3*N
+    S=input("Enter the width of the mat you want to design: ")
+
+N=int(S)
+M=3*N
+
 for i in range(1,N+1):
     if i<((N+1)/2):
         Z=int(((M-3*(2*i-1))/2))
